@@ -15,6 +15,7 @@ var app_key = "&app_key=hM4NZjM8RPGkXH6B";
 var queryParms = "&page_size=10&page_number=1&location=Cleveland&sort_order=popularity&image_sizes=blackborder500";
             
 var queryURL = "http://api.eventful.com/json/events/search?";
+var proxy = 'https://cors-anywhere.herokuapp.com/';
             
 // Creates AJAX call for the specific topic button being clicked
 var d = new Date();
@@ -41,7 +42,7 @@ queryParms += "&date=" + dateRange;
 spinner.show();
                               
 $.ajax({
-url: queryURL + queryParms + app_key,
+url: proxy + queryURL + queryParms + app_key,
 method: "GET"
 }).then(function(response) {
            
